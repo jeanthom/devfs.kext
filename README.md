@@ -6,13 +6,11 @@ Based on [this boilerplate code](https://github.com/droe/example.kext) just to s
 
 ```
 make
-sudo chown -R root:wheel devfs.kext
-sudo kextload devfs.kext
+sudo make install
 ```
 
 ## Uninstall
 
 ```
-sudo kextunload devfs.kext
-sudo rm -rf devfs.kext
+sudo make uninstall
 ```
