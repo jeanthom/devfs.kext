@@ -9,15 +9,15 @@
 #include <mach/mach_types.h>
 #include <miscfs/devfs/devfs.h>
 
-static int devfs_open(dev_t a, int b, int c, struct proc *d) {
+static int devfs_open(dev_t dev, int oflags, int devtype, struct proc *p) {
 	printf(KEXTNAME_S ": opened\n");
 }
 
-static int devfs_close(dev_t a, int b, int c, struct proc *d) {
+static int devfs_close(dev_t dev, int fflag, int devtype, struct proc *p) {
 	printf(KEXTNAME_S ": closed\n");
 }
 
-static int devfs_ioctl(dev_t a, u_long b, caddr_t c, int d, struct proc *e) {
+static int devfs_ioctl(dev_t dev, u_long cmd, caddr_t data, int fflag, struct proc *p) {
 	printf(KEXTNAME_S ": ioctl\n");
 }
 
